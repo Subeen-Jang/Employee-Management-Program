@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace = "com.emp.model">
+  
+  <!-- 직원 등록 -->
+  	<insert id="empInsert" parameterType="com.emp.model.empDTO">
+  		INSERT 
+  		INTO public.emp
+  		VALUES(#{idx},#{rank},#{name},#{tel},#{email})
+  	</insert>
+  	
+  <!-- 직원 리스트 출력 -->
+  	<select id="empList" resultType="com.emp.model.empDTO">
+  		SELECT * 
+  		FROM public.emp
+  		ORDER BY name
+  	</select>
+  	
+  <!-- 직원 검색 -->
+  <select id="empSearch" parameterType="Map" resultType="com.emp.model.empDTO">
+  		SELECT *
+  		FROM public.emp
+  		WHERE 
+  		<choose>
+  			<when test = "category == 'idx'.toString()">
+  			idx::varchar(255) like '%' || #{keyword}|| '%'
+  			</when>
+  			<when test = "category == 'rank'.toString()">
+	  		rank like '%'||#{keyword}||'%' 
+	  		</when>
+	  		<when test = "category == 'name'.toString()">
+	  		name like '%'||#{keyword}||'%' 
+	  		</when>
+	  		<when test = "category == 'tel'.toString()">
+	  		tel like '%'||#{keyword}||'%' 
+	  		</when>
+	  		<when test = "category == 'email'.toString()">
+	  		email like '%'||#{keyword}||'%' 
+	  		</when>
+  		</choose>
+  		ORDER BY name
+  	</select>
+  <!-- 직원 정보 상세 보기 -->
+  <select id="empInfo" parameterType="Integer" resultType="com.emp.model.empDTO">
+  		SELECT * 
+  		FROM public.emp
+  		WHERE idx = #{idx}
+  </select>
+  
+  
+  <!-- 직원 정보 수정 -->
+  	<update id="empUpdate" parameterType="com.emp.model.empDTO">
+  		UPDATE public.emp
+  		SET idx = #{idx},
+  			rank =#{rank},
+  			name = #{name},
+  			tel = #{tel},
+  			email = #{email}
+  		WHERE idx = #{idx}
+  	</update>
+  	
+  <!-- 직원 정보 삭제 -->
+  	<delete id="empDelete" parameterType="Integer">
+  		DELETE 
+  		FROM public.emp 
+  		WHERE idx = #{idx}
+  	</delete>
+  	
+  	
+  <!-- 직원 정보 다운로드 -->
+  </mapper>
