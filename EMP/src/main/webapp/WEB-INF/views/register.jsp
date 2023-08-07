@@ -6,10 +6,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 
 <style>
+body{
+font-family: 'GmarketSansMedium';
+align: center;
+}
 
 input[type="text"]{
 	width:400px;
@@ -55,43 +60,48 @@ function validateEmail(){
 <body>
 <h1 align="center">직원 관리 프로그램</h1>
 
-
 <h3 align="center">직원 등록</h3>
-<form name="empInsert" id="empInsert" action="register.do" method="post">
-<table border ="1" width="550" cellspacing="0">
-	<tr>
-		<th>직원번호</th>
-		<td><input type="text" name="idx"></td>
-	</tr>
-	
-	<tr>
-		<th>직급</th>
-		<td><input type="text" name="rank"></td>
-	</tr>
-	
-	<tr>
-		<th>이름</th> 
-		<td><input type="text" name="name"></td>
-	</tr>
-	
-	<tr>
-		<th>전화번호</th> 
-		<td><input type="text" name="tel" id="tel" placeholder ="000-0000-0000 형식으로 등록해주세요"  onchange = "validatTel()"></td>
-	</tr>
-	
-	<tr>
-		<th>이메일</th> 
-		<td><input type="text" name="email" id="email" onchange = "validateEmail()"></td>
-	</tr>
-</table>
 
+<div class="d-flex justify-content-center align-items-center">
+<form name="empInsert" id="empInsert" action="register.do" method="post">
+  <div class="mb-3">
+    <label for="InputIdx" class="form-label">직원번호</label>
+    <input type="text" class="form-control" id="idx" name="idx">
+    <div id="idxHelp" class="form-text">숫자를 입력해주세요</div>
+  </div>
+  
+  <div class="mb-3">
+    <label for="InputRank" class="form-label">직급</label>
+    <input type="text" class="form-control" id="rank" name="rank">
+    <div></div>
+  </div>
+  
+  <div class="mb-3">
+    <label for="InputRank" class="form-label">이름</label>
+    <input type="text" class="form-control" id="name" name="name">
+    <div></div>
+  </div>
+  
+  <div class="mb-3">
+    <label for="InputTel" class="form-label">전화번호</label>
+    <input type="text" class="form-control" id="tel" name="tel" placeholder ="000-0000-0000 형식으로 등록해주세요"  onchange = "validatTel()">
+    <div id="telHelp" class="form-text"></div>
+  </div>
+  
+  <div class="mb-3">
+    <label for="InputEmail" class="form-label">이메일</label>
+    <input type="text" class="form-control" id="email" name="email" onchange = "validateEmail()">
+    <div></div>
+  </div>
+  
 <div id="wrapper" > 
-	<input type="submit"  value="직원등록" class="button">
-	<input type="reset" value="다시 작성" class="button">
-	<a href="list.do"><input type="button" value="목록" class="button"></a>
+	<input type="submit"  value="직원등록" class="btn btn-primary">
+	<input type="reset" value="다시 작성" class="btn btn-secondary">
+	<a href="list.do"><input type="button" value="목록" class="btn btn-secondary"></a>
 </div>
 
 </form>
+</div>
 
 </body>
 </html>
