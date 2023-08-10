@@ -12,8 +12,9 @@
 
 <style>
 body{
-font-family: 'GmarketSansMedium';
-align: center;
+	font-family: 'GmarketSansMedium';
+	align: center;
+	margin: 50px;
 }
 
 input[type="text"]{
@@ -97,7 +98,7 @@ function validateEmail(){
 <div id="wrapper" > 
 	<input type="submit"  value="직원등록" class="btn btn-primary">
 	<input type="reset" value="다시 작성" class="btn btn-secondary">
-	<a href="list.do"><input type="button" value="목록" class="btn btn-secondary"></a>
+	<a href="list.do"><input type="button" value="목록" class="btn btn-light"></a>
 </div>
 
 </form>

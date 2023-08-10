@@ -13,6 +13,11 @@
 body{
 	font-family: 'GmarketSansMedium';
 	align: center;
+	margin: 50px;
+}
+
+h3{
+	magin-bottom: 20px;
 }
 
 #wrapper{
@@ -60,7 +65,7 @@ body{
 		<c:param name="idx">${dto.idx}</c:param>
 	</c:url>
 	<a href="${deleteUrl}"><input type="button" value="삭제" class="btn btn-secondary"></a>
-	<a href="list.do"><input type="button" value="목록" class="btn btn-secondary"></a>
+	<a href="list.do"><input type="button" value="목록" class="btn btn-light"></a>
 </div>
 
 </form>

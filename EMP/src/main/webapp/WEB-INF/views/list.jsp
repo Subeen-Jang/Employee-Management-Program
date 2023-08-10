@@ -7,24 +7,35 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <style>
+h1{
+	margin-bottom:20px;
+}
 table{
-	border:1px solid black;
 	margin-left:auto;
 	margin-right:auto;
 }
- #wrapper{
+
+body{
+	font-family: 'GmarketSansMedium';
+	align: center;
+	margin: 50px;
+}
+
+#wrapper{
         width:300px;
         margin:auto;
 }
 </style>
+
 <body>
 <h1 align="center">직원 리스트</h1>
 <div>
 <form name="empSearch" id="empSearch" action="empSearch.do" method="post">
-<div id="wrapper">
-	<select name="category" id="category">
+<div class="input-group mb-3">
+	<select name="category" id="category" >
 		<option value="idx" selected>직원번호</option>
 		<option value="rank">직급</option>
 		<option value="name">이름</option>
@@ -32,11 +43,13 @@ table{
 		<option value="email">이메일</option>
 	</select>
 	<input type="text" name="keyword" id="keyword" placeholder = "검색어를 입력하세요">
-	<input type="submit" value="검색">
+	<input type="submit" value="검색" class="btn btn-outline-secondary">
 </div>
 </form>
 </div>
-<table  border ="1" width="550" cellspacing="0">
+
+
+<table  border ="1" width="550" cellspacing="0" class="table table-striped">
 <thead>
 	<tr>
 		<th>직원번호</th>
@@ -70,8 +83,8 @@ table{
 </tbody>
 </table>
 <div id="wrapper">
-<a href="downCsv.do"><input type="button" value="csv파일 다운"></a>
-<a href="downExcel.do"><input type="button" value="엑셀파일 다운"></a>
+<a href="downCsv.do"><input type="button" value="csv파일 다운" class="btn btn-primary"></a>
+<a href="downExcel.do"><input type="button" value="엑셀파일 다운" class="btn btn-primary"></a>
 </div>
 </body>
 </html>
