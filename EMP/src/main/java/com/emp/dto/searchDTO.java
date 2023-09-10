@@ -1,4 +1,4 @@
-package com.emp.model;
+package com.emp.dto;
 
 public class searchDTO {
  public String category;

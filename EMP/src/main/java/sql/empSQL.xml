@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-  <mapper namespace = "com.emp.model">
+  <mapper namespace = "com.emp.dto">
   
   <!-- 직원 등록 -->
-  	<insert id="empInsert" parameterType="com.emp.model.empDTO">
+  	<insert id="empInsert" parameterType="com.emp.dto.empDTO">
   		INSERT 
   		INTO public.emp
   		VALUES(#{idx},#{rank},#{name},#{tel},#{email})
   	</insert>
   	
   <!-- 직원 리스트 출력 -->
-  	<select id="empList" resultType="com.emp.model.empDTO">
+  	<select id="empList" resultType="com.emp.dto.empDTO">
   		SELECT * 
   		FROM public.emp
   		ORDER BY name
   	</select>
   	
   <!-- 직원 검색 -->
-  <select id="empSearch" parameterType="Map" resultType="com.emp.model.empDTO">
+  <select id="empSearch" parameterType="Map" resultType="com.emp.dto.empDTO">
   		SELECT *
   		FROM public.emp
   		WHERE 
@@ -42,7 +42,7 @@
   		ORDER BY name
   	</select>
   <!-- 직원 정보 상세 보기 -->
-  <select id="empInfo" parameterType="Integer" resultType="com.emp.model.empDTO">
+  <select id="empInfo" parameterType="Integer" resultType="com.emp.dto.empDTO">
   		SELECT * 
   		FROM public.emp
   		WHERE idx = #{idx}
@@ -50,7 +50,7 @@
   
   
   <!-- 직원 정보 수정 -->
-  	<update id="empUpdate" parameterType="com.emp.model.empDTO">
+  	<update id="empUpdate" parameterType="com.emp.dto.empDTO">
   		UPDATE public.emp
   		SET idx = #{idx},
   			rank =#{rank},

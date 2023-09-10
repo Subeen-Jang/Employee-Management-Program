@@ -1,6 +1,7 @@
 package com.emp.controller;
 
 import org.apache.poi.hssf.usermodel.HSSFCellStyle;
+
 import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
@@ -19,8 +20,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.emp.model.empDAO;
-import com.emp.model.empDTO;
+import com.emp.dao.empDAO;
+import com.emp.dto.empDTO;
 
 import java.io.IOException;
 import java.util.ArrayList;

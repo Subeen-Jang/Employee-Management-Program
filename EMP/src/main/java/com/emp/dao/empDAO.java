@@ -1,6 +1,8 @@
-package com.emp.model;
+package com.emp.dao;
 
 import java.util.List;
+
+import com.emp.dto.empDTO;
 
 public interface empDAO {
 	/*직원 등록 */

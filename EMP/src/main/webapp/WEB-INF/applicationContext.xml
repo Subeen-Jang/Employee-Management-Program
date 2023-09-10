@@ -25,7 +25,7 @@
 	</bean>
 
 	<!-- DAO -->
-	<bean id="empDAO" class="com.emp.model.empDAOImple">
+	<bean id="empDAO" class="com.emp.dao.empDAOImple">
 		<constructor-arg>
 			<ref bean="sqlSessionTemplate" />
 		</constructor-arg>
