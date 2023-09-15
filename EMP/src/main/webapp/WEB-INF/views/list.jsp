@@ -30,6 +30,8 @@ body{
 }
 </style>
 
+
+
 <body>
 <h1 align="center">직원 리스트</h1>
 <div>
@@ -77,14 +79,37 @@ body{
 			</c:url>
 				<td><a href="${infoUrl}">${list.name}</td></a>
 			<td>${list.tel}</td>
-			<td>${list.email}</td>
+			   <td>
+                <a href="#"  data-bs-toggle="dropdown" aria-expanded="false" data-bs-target="maillist">
+                            ${list.email}
+                </a>
+                        <div class="dropdown-menu" id="list">
+                        	<div class="layer_common layer_user_profile" style="top: 397.667px; left: 413px;">
+							<strong class="user_name">
+								<span>${list.name}</strong></span><div class="email_wrap">
+								<span class="email">${list.email}</span>
+							</div>
+                        	 <hr class="dropdown-divider">
+                            <li>메일 쓰기</li>
+                        </div>
+            </td>
+			
 		</tr>
 	</c:forEach>
 </tbody>
 </table>
+
+
 <div id="wrapper">
 <a href="downCsv.do"><input type="button" value="csv파일 다운" class="btn btn-primary"></a>
 <a href="downExcel.do"><input type="button" value="엑셀파일 다운" class="btn btn-primary"></a>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+
 </body>
 </html>
+
+

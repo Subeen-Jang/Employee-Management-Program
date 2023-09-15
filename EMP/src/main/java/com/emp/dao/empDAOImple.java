@@ -31,17 +31,6 @@ public class empDAOImple implements empDAO {
 	}
 	
 	/*직원 검색*/
-//	@Override
-//	public List<empDTO> empSearch(searchDTO sdto) {
-////		Map map = new HashMap();
-////		
-////		map.put("category", category);
-////		map.put("keyword", keyword);
-//		
-//		List<empDTO> list = sql.selectList("empSearch",sdto);
-//		return list;
-//	}
-	
 	@Override
 	public List<empDTO> empSearch(String category, String keyword) {
 		Map map = new HashMap();
