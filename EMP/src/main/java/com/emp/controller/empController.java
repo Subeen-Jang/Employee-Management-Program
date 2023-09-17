@@ -72,10 +72,6 @@ public class empController {
 	}
 	
 	/*직원 검색*/
-//	@RequestMapping("/empSearch.do")
-//	public ModelAndView search(@RequestParam(""))
-	
-	
 	@RequestMapping("/empSearch.do")
 	public ModelAndView empSearch(@RequestParam("category")String category,
 			@RequestParam("keyword")String keyword) {
@@ -99,6 +95,20 @@ public class empController {
 		
 		mav.addObject("dto", dto);
 		mav.setViewName("/info");
+		
+		return mav;
+	}
+	
+	
+	
+	/*메일 보내기*/
+	@RequestMapping("/mail.do")
+	public ModelAndView mail(@RequestParam("email")String email) {
+		String userEmail = email;
+		ModelAndView mav  = new ModelAndView();
+		
+		mav.addObject("email", userEmail);
+		mav.setViewName("/mail");
 		
 		return mav;
 	}

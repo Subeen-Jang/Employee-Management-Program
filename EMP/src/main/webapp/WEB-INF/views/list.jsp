@@ -90,7 +90,10 @@ body{
 								<span class="email">${list.email}</span>
 							</div>
                         	 <hr class="dropdown-divider">
-                            <li>메일 쓰기</li>
+                        	 <c:url var="goMail" value="mail.do">
+							<c:param name="email">${list.email}</c:param>
+							</c:url>
+                            <li><a href="${goMail}">메일 쓰기</a></li>
                         </div>
             </td>
 			
