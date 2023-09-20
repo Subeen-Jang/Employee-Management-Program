@@ -2,6 +2,7 @@ package com.emp.controller;
 
 import org.apache.poi.hssf.usermodel.HSSFCellStyle;
 
+
 import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
@@ -21,7 +22,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.emp.dao.empDAO;
+import com.emp.dao.mailService;
 import com.emp.dto.empDTO;
+import com.emp.dto.mailDTO;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -33,6 +36,7 @@ import javax.servlet.http.HttpServletResponse;
 public class empController {
 	
 	@Autowired empDAO dao;
+	@Autowired mailService mailService;
 	
 	/*메인 페이지 이동*/
 	@RequestMapping("/index.do")
@@ -100,8 +104,7 @@ public class empController {
 	}
 	
 	
-	
-	/*메일 보내기*/
+	/*메일 페이지 이동*/
 	@RequestMapping("/mail.do")
 	public ModelAndView mail(@RequestParam("email")String email) {
 		String userEmail = email;
@@ -112,6 +115,15 @@ public class empController {
 		
 		return mav;
 	}
+	
+	/*메일 송부*/
+	@RequestMapping("/mailSend.do")
+	public String sendMail(mailDTO dto) {
+		mailService.sendMail(dto);
+		
+		return "redirect:/list.do";
+	}
+	
 	
 	/*직원 정보 수정*/
 	@RequestMapping("/update.do")
