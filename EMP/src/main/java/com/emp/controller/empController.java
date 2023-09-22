@@ -30,6 +30,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
@@ -118,7 +119,7 @@ public class empController {
 	
 	/*메일 송부*/
 	@RequestMapping("/mailSend.do")
-	public String sendMail(mailDTO dto) {
+	public String sendMail(mailDTO dto) throws MessagingException, IOException {
 		mailService.sendMail(dto);
 		
 		return "redirect:/list.do";

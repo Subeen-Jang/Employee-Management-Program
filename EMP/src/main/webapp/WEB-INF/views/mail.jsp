@@ -39,6 +39,11 @@ body{
 </div>
 
 <div class="mb-3">
+  <label for="ccAddress" class="form-label">참조</label>
+  <input type="text" class="form-control" name="ccAdress" id="ccAdress">
+</div>
+
+<div class="mb-3">
   <label for="emailTitle" class="form-label">제목</label>
   <input type="text" class="form-control" name="title" id="title">
 </div>
