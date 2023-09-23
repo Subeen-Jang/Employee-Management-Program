@@ -37,7 +37,7 @@
 	     	<property name="host" value="smtp.gmail.com" />
 	  		<property name="port" value="587" />
 	 		<property name="username" value="wkdtn134@gmail.com"/> 
-		 	<property name="password" value=""/> <!-- 비밀번호 -->
+		 	<property name="password" value="elwg tgzr xpow eogu"/> <!-- 비밀번호 -->
 			 <property name="defaultEncoding" value="utf-8" />
 			 
 			 <!-- 보안연결 TLS과 관련된 설정 -->

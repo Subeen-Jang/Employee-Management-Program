@@ -32,7 +32,7 @@ body{
 <h1>메일</h1>
 <div class="d-flex justify-content-center align-items-center">
 
-<form name="mailForm" id="mailSend" action="mailSend.do" method="post">
+<form name="mailForm" id="mailSend" action="mailSend.do" method="post" enctype="multipart/form-data">
 <div class="mb-3">
   <label for="emailAddress" class="form-label">받는사람</label>
   <input type="text" class="form-control" name="address" id="address" value="${email}">
@@ -51,6 +51,10 @@ body{
 <div class="mb-3">
   <label for="emailContent" class="form-label">내용</label>
   <textarea class="form-control" name="content" id="content" rows="5"></textarea>
+</div>
+<div class="mb-3">
+  <label for="attachment" class="form-label">첨부파일</label>
+  <input type="file" class="file-input" name="file" >
 </div>
 
   

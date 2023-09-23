@@ -19,6 +19,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.emp.dao.empDAO;
@@ -119,8 +120,8 @@ public class empController {
 	
 	/*메일 송부*/
 	@RequestMapping("/mailSend.do")
-	public String sendMail(mailDTO dto) throws MessagingException, IOException {
-		mailService.sendMail(dto);
+	public String sendMail(mailDTO dto,MultipartFile file) throws MessagingException, IOException {
+		mailService.sendMail(dto,file);
 		
 		return "redirect:/list.do";
 	}
