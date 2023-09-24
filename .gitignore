@@ -162,6 +162,4 @@ buildNumber.properties
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
 
-#
-.WEB-INF/dispatcher-servlet.xml
 # End of https://www.toptal.com/developers/gitignore/api/java,maven,eclipse
