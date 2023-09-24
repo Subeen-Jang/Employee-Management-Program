@@ -163,5 +163,5 @@ buildNumber.properties
 .classpath
 
 #
-.views/dispatcher-servlet.xml
+.WEB-INF/dispatcher-servlet.xml
 # End of https://www.toptal.com/developers/gitignore/api/java,maven,eclipse
