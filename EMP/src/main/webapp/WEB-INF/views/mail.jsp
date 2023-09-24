@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <style>
@@ -28,6 +29,8 @@ body{
         margin:auto;
 }
 </style>
+
+
 <body>
 <h1>메일</h1>
 <div class="d-flex justify-content-center align-items-center">
@@ -38,9 +41,12 @@ body{
   <input type="text" class="form-control" name="address" id="address" value="${email}">
 </div>
 
+<div id="container">
 <div class="mb-3">
   <label for="ccAddress" class="form-label">참조</label>
   <input type="text" class="form-control" name="ccAdress" id="ccAdress">
+  <input type="button" value="추가" class="addCC">
+</div>
 </div>
 
 <div class="mb-3">
@@ -64,6 +70,27 @@ body{
 
 </form>
 </div>
+
+<script>
+
+$(document).ready(function() {
+    $("#container").on("click", ".addCC", function() {
+        var newHTML = `
+            <div class="mb-3">
+                <label for="ccAddress" class="form-label">참조</label>
+                <input type="text" class="form-control" name="ccAdress">
+                <input type="button" value="추가" class="addCC">
+                <input type="button" value="삭제" class="rmCC">
+            </div>
+        `;
+        $(this).parent().parent().append(newHTML);
+    });
+    
+    $("#container").on("click", ".rmCC", function() {
+        $(this).parent().remove();
+    });
+});
+</script>
 
 </body>
 </html>
