@@ -28,6 +28,11 @@ body{
         width:300px;
         margin:auto;
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
 </style>
 
 
@@ -45,7 +50,8 @@ body{
 		<option value="email">이메일</option>
 	</select>
 	<input type="text" name="keyword" id="keyword" placeholder = "검색어를 입력하세요">
-	<input type="submit" value="검색" class="btn btn-outline-secondary">
+	<input type="submit" value="검색" class="btn btn-primary">
+	<a href="list.do"><button value="초기화" class="btn btn-secondary">초기화</a></button>
 </div>
 </form>
 </div>

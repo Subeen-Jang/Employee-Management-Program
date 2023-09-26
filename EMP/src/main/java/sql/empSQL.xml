@@ -67,6 +67,4 @@
   		WHERE idx = #{idx}
   	</delete>
   	
-  	
-  <!-- 직원 정보 다운로드 -->
   </mapper>
